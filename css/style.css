@@ -3,3 +3,135 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #c1c1c1; /* Transparent background */
+    box-shadow: 20px 20px 60px #00000050,-20px -20px 60px #ffffff88 inset;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+  }
+
+  .logo {
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-grow: 1;
+  }
+
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 20px;
+  }
+
+  .nav-link:hover {
+    color: #55a7ff;
+  }
+
+  .contact-btn {
+    padding: 10px 20px;
+    font-size: 19px;
+    background-color: #55a7ff;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+
+  .contact-btn:hover {
+    background-color: #0077cc;
+  }
+
+  /* Responsive styles */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+    width: 80%;
+    margin: 0px 10%;
+    border-radius: 20px;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 50px;
+      left: 0;
+      right: 0;
+       background-color: #c6c4bd; /* Transparent background */
+    box-shadow: 20px 20px 60px #00000050,-20px -20px 60px #ffffff88 inset;
+      z-index: 999; /* Ensure it's above the rest of the content */
+    }
+    .logo{
+        font-size: 24px;
+    }
+
+    .nav-links.active {
+      display: flex;
+    }
+
+    .nav-link {
+      margin: 10px 0;
+      font-size: 17px;
+    }
+
+    .cancel-icon {
+      display: none;
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      cursor: pointer;
+      color: black;
+      font-size: 24px;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    color: black;
+    font-size: 24px;
+  }
+  .contact{
+    display: none;
+  }
+  .cancel-icon{
+    display: none;
+  }
+  /* Adjust styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .menu-icon {
+      display: block;
+    }
+    .contact{
+        display: block;
+    }
+    .contact-btn{
+        display: none;
+    }
+
+    .nav-links {
+      display: none;
+    }
+  }
+.main-wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: gainsboro;
+}
