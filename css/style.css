@@ -1,5 +1,5 @@
 :root{
-  --bkg: rgba(230, 224, 236, 0.737);
+  --bkg: rgba(255, 255, 255, 0.737);
   --btn: #5745ff;
   --text: #ffffff;
   --hov: #8245ff
@@ -110,9 +110,6 @@ body {
   color: rgb(122, 123, 142);
   font-size: 32px;
 }
-
-
-
 
 .search-container {
   display: flex;
