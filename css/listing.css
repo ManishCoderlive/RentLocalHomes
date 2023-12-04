@@ -1,0 +1,263 @@
+:root {
+    --background: rgba(255, 255, 255, 0.95);
+    --button: #5745ff;
+    --button-hover: #8245ff;
+    --text: #333;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--background);
+}
+
+.navbar {
+    width: 100%;
+    height: 10%;
+    display: flex;
+}
+
+.logo {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.nav {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav li {
+    margin: 0;
+    padding: 0;
+}
+
+.nav a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: bold;
+    transition: color 0.3s;
+    font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.nav a:hover {
+    color: var(--button-hover);
+}
+
+.login {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: var(--text);
+    background-color: var(--button);
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: var(--button-hover);
+}
+
+.display {
+    width: 100%;
+    height: 90%;
+    display: flex;
+}
+
+.filter-sec {
+    width: 25%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: var(--background);
+    /* Add various filters styles here */
+}
+
+.list-sec {
+    width: 75%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+/* ... (previous styles) */
+
+
+/* ... (previous styles) */
+
+.house-list-box {
+    position: relative;
+width: 98%;
+    height: 30vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.house-image {
+    width: 30%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.house-details {
+    width: 50%;
+    color: #333;
+}
+
+/* Price tag */
+.price-tag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* background-color: var(--btn); */
+    color: black;
+    font-weight: 800;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 20px;
+}
+
+.house-details h2 {
+    color: #8245ff;
+    margin-bottom: 10px;
+}
+
+.house-details p {
+    margin: 0 0 10px 0;
+}
+
+/* Book Now button */
+.bookNowBtn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.bookNowBtn:hover {
+    background-color: #45a049;
+}
+
+/* Add this to your existing CSS file or create a new one for the popup styles */
+/* Popup overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.674);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popup container */
+#popup {
+    background: #fff;
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(12, 12, 12, 0.318);
+    border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Popup content */
+#popup label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#popup input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+#popup button {
+    display: inline-block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: var(--button);
+    transition: background-color 0.3s;
+}
+
+#popup button:hover {
+    background-color: var(--button-hover);
+}
+
+/* Close button */
+#popup #cancelBtn {
+    background-color: #ccc;
+    color: #333;
+    margin-top: 10px;
+}
+
+#popup #cancelBtn:hover {
+    background-color: #999;
+}

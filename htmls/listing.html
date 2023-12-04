@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Rentals - Your Dream Rental Awaits</title>
+    <meta name="description"
+        content="Discover your ideal rental with RentLocalHomes. Explore a variety of homes tailored to your lifestyle. Find comfort and convenience with us.">
+    <meta name="keywords" content="RentLocalHomes, rental, homes, apartments, houses, property, real estate">
+    <link rel="stylesheet" href="/css/listing.css">
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="navbar">
+            <div class="logo">
+                <h1>Urban Rentals</h1>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#" class="contact">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="login">
+                <button class="login-btn" >Login</button>&nbsp;
+                <button class="login-btn open">Add</button>
+            </div>
+        </div>
+        <div class="display">
+            <div class="filter-sec"></div>
+            <div class="list-sec" id="houseList">
+                <!-- Houses will be displayed here -->
+            </div>
+        </div>
+
+    </div>
+
+    <div id="overlay" style="display: none;"></div>
+    <div id="popup" style="display: none;">
+        <div>
+            <label for="price">Price:</label>
+            <input type="text" id="price" name="price">
+
+            <label for="title">house title</label>
+            <input type="text" id="title" name="title">
+
+            <label for="area">Area: (sq.ft)</label>
+            <input type="text" id="area" name="area">
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location">
+
+            <label for="image">Image URL:</label>
+            <input type="text" id="image" name="image">
+
+            <button id="addHomeBtn">Add Home</button>
+            <button id="cancelBtn">Cancel</button>
+        </div>
+    </div>
+
+    <script type="module" src="/javascripts/index.js"></script>
+
+</body>
+
+</html>
