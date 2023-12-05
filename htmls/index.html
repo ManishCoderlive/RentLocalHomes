@@ -20,15 +20,26 @@
             </div>
             <nav class="nav">
                 <ul>
-                  <li><a href="./index.html">Home</a></li>
+                  <li><a href="#">Home</a></li>
                   <li><a href="#">About</a></li>
-                  <li><a href="./listing.html">house list</a></li>
-                  <li><a href="./contact.html" class="contact">Contact us</a></li>
+                  <li><a href="#">Services</a></li>
+                  <li><a href="#" class="contact">Contact us</a></li>
                 </ul>
               </nav>
             <div class="login">
                 <button class="login-btn">login</button>
             </div>
+            <div class="navbar-toggler">&#9776;</div>
+        </div>
+        <div class="side-nav">
+            <nav class="side-navbar">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#" class="contact">Contact us</a></li>
+                </ul>
+            </nav>
         </div>
         <div class="hero">
             <div class="content-section">
@@ -58,6 +69,16 @@
 
 
     <script src="/javascripts/index.js"></script>
+    <script>
+        function toggleSideNav() {
+    const sideNav = document.querySelector('.side-nav');
+    sideNav.classList.toggle('active');
+}
+const navtog = document.querySelector('.navbar-toggler');
+navtog.addEventListener('click', ()=>{
+toggleSideNav();    
+});
+    </script>
 </body>
 
 </html>

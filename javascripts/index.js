@@ -1,3 +1,12 @@
+function toggleSideNav() {
+    const sideNav = document.querySelector('.side-nav');
+    sideNav.classList.toggle('active');
+}
+const navtog = document.querySelector('.navbar-toggler');
+navtog.addEventListener('click', ()=>{
+toggleSideNav();    
+});
+
 // Import necessary Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getDatabase, ref, onValue, push, set } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js';
@@ -107,7 +116,7 @@ function displayHouses() {
                         <div class="price-tag">
                             <p>${houseData.specifications.price} /months</p>
                         </div>
-                        <h2>${houseData.specifications.title}</h2>
+                        <h2 class = "t">${houseData.specifications.title}</h2>
                         <p>${houseData.specifications.area}</p>
                         <p>${houseData.address}</p>
                         <!-- Add more details as needed -->
