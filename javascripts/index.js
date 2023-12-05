@@ -1,5 +1,4 @@
-
-  // Import necessary Firebase modules
+// Import necessary Firebase modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import { getDatabase, ref, onValue, push, set } from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js';
 
@@ -22,7 +21,7 @@ const app = initializeApp(firebaseConfig);
 // Get a reference to the Firebase database
 const db = getDatabase();
 const open = document.querySelector(".open")
-open.addEventListener('click',()=>{
+open.addEventListener('click', () => {
     openPopup();
 });
 
@@ -32,7 +31,11 @@ function openPopup() {
     document.getElementById('popup').style.display = 'block';
 }
 const close = document.querySelector("#cancelBtn")
-close.addEventListener('click',()=>{
+close.addEventListener('click', () => {
+    closePopup();
+});
+const closee = document.querySelector("#overlay")
+closee.addEventListener('click', () => {
     closePopup();
 });
 // Function to close the popup
@@ -41,7 +44,7 @@ function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
 const adddb = document.querySelector("#addHomeBtn")
-adddb.addEventListener('click',()=>{
+adddb.addEventListener('click', () => {
     addHome();
 });
 
@@ -80,7 +83,7 @@ function addHome() {
     closePopup();
 }
 
-// Function to display houses
+// Function to display houses and show details
 function displayHouses() {
     const housesRef = ref(db, 'homes');
 
@@ -94,6 +97,10 @@ function displayHouses() {
             for (const [homeId, houseData] of Object.entries(housesData)) {
                 const listItem = document.createElement('div');
                 listItem.classList.add('house-list-box'); // Add a class for styling
+
+                // Add click event listener to each house element
+                listItem.addEventListener('click', () => showDetails(houseData));
+
                 listItem.innerHTML = `
                     <img class="house-image" src="${houseData.home_images}" alt="House Image">
                     <div class="house-details">
@@ -117,10 +124,31 @@ function displayHouses() {
     });
 }
 
-// Function to handle booking
-function bookNow(homeId) {
-    // You can implement the booking logic here
-    console.log(`Booking for home with ID: ${homeId}`);
+// Function to show details when a house is clicked
+function showDetails(houseData) {
+    const list = document.querySelector('.list-sec')
+    list.classList.add('list')
+    const myh = document.querySelector('.show-details')
+    myh.classList.add('myh')
+    const detailsSection = document.querySelector('.show-details');
+    detailsSection.innerHTML = '';
+
+    const detailsItem = document.createElement('div');
+    detailsItem.classList.add('custom-details-item'); // Change class name here
+    detailsItem.innerHTML = `
+        <img class="details-image" src="${houseData.home_images}" alt="House Image">
+        <div class="details-info">
+            <h2>${houseData.specifications.title}</h2>
+            <p>Area: ${houseData.specifications.area}</p>
+            <p>location: ${houseData.address}</p>
+            <p><b>${houseData.specifications.price}</b> /months</p>
+            <!-- Add more details as needed -->
+            
+            <!-- Book Now button -->
+            <button class="bookNowBtnn" onclick="bookNow('${houseData.address}')">Book Now</button>
+        </div>
+    `;
+    detailsSection.appendChild(detailsItem);
 }
 
 // Initial display of houses
